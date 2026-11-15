@@ -7,6 +7,7 @@
 | Devanshi Singal | IIT2024029 | XSS (Stored XSS) |
 | Vaidik Kathal | IIT2024005  | CSRF Exploit & Defense |
 | Kshitij Chatap | IIT2024004 | SQL Injection |
+| Utkarsh Singh | IIT202052 | CSRF exploit (POST variant) |
 ---
 ## Repository Structure
 

