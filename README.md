@@ -1,9 +1,13 @@
-# CS Group 11 — Web Security Labs
+# CS Group 11 
 
-A collection of hands-on web security demonstrations covering three classic attack categories: **CSRF**, **XSS**, and **SQL Injection**. Each subdirectory is a self-contained, runnable lab with its own setup instructions and README.
+## Team
 
+| Member | Roll Number | Lab |
+|--------|-------------|-----|
+| Devanshi Singal | IIT2024029 | XSS (Stored XSS) |
+| Vaidik Kathal | IIT2024005  | CSRF Exploit & Defense |
+| Kshitij Chatap | IIT2024004 | SQL Injection |
 ---
-
 ## Repository Structure
 
 ```
@@ -94,13 +98,6 @@ export DB_HOST=127.0.0.1 DB_PORT=3306 DB_USER=root DB_PASSWORD="YOUR_PASSWORD"
 
 ---
 
-## Team
-
-| Member | Roll Number | Lab |
-|--------|-------------|-----|
-| Devanshi Singal | IIT2024029 | XSS (Stored XSS) |
-| Vaidik Kathal | IIT2024005  | CSRF Exploit & Defense |
-| Kshitij Chatap | IIT2024004 | SQL Injection |
 
 ---
 
