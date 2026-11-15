@@ -1,0 +1,5 @@
+*.o
+*.exe
+sql_injection_lab
+bin/
+.DS_Store

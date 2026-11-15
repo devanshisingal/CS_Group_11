@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard | SecureBank</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/css/style.css" rel="stylesheet">
+</head>
+<body class="dashboard-page">
+  <nav class="navbar navbar-expand-lg navbar-dark bank-nav">
+    <div class="container">
+      <a class="navbar-brand brand d-flex align-items-center gap-2" href="/">
+        <span class="brand-mark">S</span><span>Secure<span class="brand-light">Bank</span></span>
+      </a>
+      <div class="d-flex align-items-center gap-3">
+        <span class="text-white-50 small d-none d-sm-inline">Signed in as <strong id="nav-username" class="text-white"></strong></span>
+        <button id="logout-button" class="btn btn-sm btn-outline-light">Log out</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-4 py-lg-5">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-4">
+      <div><p class="eyebrow mb-2">PERSONAL BANKING</p><h1 class="h2 fw-bold mb-1">Your dashboard</h1><p class="text-secondary mb-0">A local-only demonstration environment.</p></div>
+      <span class="secure-pill"><span class="status-dot"></span> SECURED MODE · CSRF TOKEN ENABLED</span>
+    </div>
+    <div id="notice" class="alert d-none" role="alert"></div>
+
+    <section class="row g-4 mb-4">
+      <div class="col-lg-7">
+        <div class="balance-card h-100">
+          <div class="d-flex justify-content-between align-items-start">
+            <div><span class="balance-label">Available balance</span><h2 id="balance" class="balance-amount mt-3">Loading…</h2></div>
+            <span class="balance-icon" aria-hidden="true">₹</span>
+          </div>
+          <div class="balance-footer mt-4"><span>Account holder</span><strong id="account-name">—</strong><span class="ms-auto">INR · PAISA PRECISION</span></div>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="card security-card h-100 border-0">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center gap-3 mb-3"><span class="security-icon">✓</span><div><p class="eyebrow mb-1">REQUEST SECURITY</p><h2 class="h5 fw-bold mb-0">Protected transfers</h2></div></div>
+            <ul class="security-list mb-0">
+              <li>State-changing GET requests return <code>405</code>.</li>
+              <li>POST transfers require a session-bound CSRF token.</li>
+              <li>Session cookie is HttpOnly and SameSite=Lax.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="row g-4">
+      <div class="col-lg-5">
+        <div class="card panel-card border-0 h-100">
+          <div class="card-body p-4">
+            <p class="eyebrow mb-2">MOVE MONEY</p><h2 class="h4 fw-bold mb-1">Make a transfer</h2>
+            <p class="text-secondary small mb-4">Demo recipients are shown below; all values are validated by the server.</p>
+            <form id="transfer-form">
+              <label class="form-label" for="recipient">Recipient username</label>
+              <input class="form-control mb-3" id="recipient" name="recipient" placeholder="e.g. attacker" maxlength="50" required>
+              <label class="form-label" for="amount">Amount (₹)</label>
+              <div class="input-group mb-4"><span class="input-group-text">₹</span><input class="form-control" id="amount" name="amount" type="number" min="0.01" step="0.01" placeholder="0.00" required></div>
+              <button id="transfer-button" class="btn btn-primary w-100" type="submit">Review and transfer</button>
+            </form>
+            <p class="small text-secondary mt-3 mb-0">The browser sends the CSRF token in a request header. GET is never used to move money.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="card panel-card border-0">
+          <div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-center mb-3"><div><p class="eyebrow mb-2">RECENT ACTIVITY</p><h2 class="h4 fw-bold mb-0">Transactions</h2></div><span id="transaction-count" class="small text-secondary">Loading…</span></div>
+            <div class="table-responsive">
+              <table class="table align-middle transaction-table mb-0">
+                <thead><tr><th>Activity</th><th>Counterparty</th><th>Date</th><th class="text-end">Amount</th></tr></thead>
+                <tbody id="transactions"><tr><td colspan="4" class="text-center text-secondary py-4">Loading transactions…</td></tr></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <p class="security-footnote mt-4 mb-0">Educational demo only. A production banking system also needs deployment-grade session management, HTTPS, monitoring, and comprehensive authorization controls.</p>
+  </main>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
