@@ -99,8 +99,8 @@ export DB_HOST=127.0.0.1 DB_PORT=3306 DB_USER=root DB_PASSWORD="YOUR_PASSWORD"
 | Member | Roll Number | Lab |
 |--------|-------------|-----|
 | Devanshi Singal | IIT2024029 | XSS (Stored XSS) |
-| Vaidik | — | CSRF Exploit & Defense |
-| Kshitu | — | SQL Injection |
+| Vaidik Kathal | IIT2024005  | CSRF Exploit & Defense |
+| Kshitij Chatap | IIT2024004 | SQL Injection |
 
 ---
 
