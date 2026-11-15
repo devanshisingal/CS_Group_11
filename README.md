@@ -8,6 +8,8 @@
 | Vaidik Kathal | IIT2024005  | CSRF Exploit & Defense |
 | Kshitij Chatap | IIT2024004 | SQL Injection |
 | Utkarsh Singh | IIT202052 | CSRF exploit (POST variant) |
+| Suvanwita Das | IIT2024013 | OS Command Injection |
+
 ---
 ## Repository Structure
 
@@ -99,6 +101,20 @@ export DB_HOST=127.0.0.1 DB_PORT=3306 DB_USER=root DB_PASSWORD="YOUR_PASSWORD"
 
 ---
 
+### 🖥️ OS Command Injection — Demo
+**Directory:** [`OS_Command_Injection/`](./OS_Command_Injection/)  
+**Stack:** Python, Flask  
+**What it demonstrates:**
+- How OS command injection can be exploited to execute arbitrary commands on the server
+- Input validation and sanitization as the mitigation
+
+**Quick start:**
+```bash
+cd OS_Command_Injection
+pip install -r requirements.txt
+python app.py
+# Visit http://localhost:5000
+```
 
 ---
 
